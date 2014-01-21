@@ -25,8 +25,8 @@ RUN locale-gen en_US.UTF-8 && dpkg-reconfigure locales
 
 RUN apt-get update && \
     apt-get install supervisor mysql-client libapache2-mod-fastcgi \
-    php5-fpm php5 php5-apcu php5-common php5-curl \
-    php5-mysql php5-memcache php5-tidy php5-curl php5-mcrypt php5-imagick php5-gd -y
+    php5-fpm php5 php5-apcu php5-common curl php5-curl \
+    php5-mysql php5-memcache php5-tidy php5-mcrypt php5-imagick php5-gd -y
 
 # Clean Apt
 RUN apt-get clean && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/*
